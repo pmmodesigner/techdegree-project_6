@@ -25,20 +25,40 @@ function getRandomPhraseAsArray(arr) {
   return phraseCharacters;
 }
 
+let phraseArray = getRandomPhraseAsArray(phrases);
+
 function addPhraseToDisplay(arr) {
-    for (let i = 0; i < arr.length; i++) {
-        let li = document.createElement('li');
-        li.textContent = arr[i];
-        if (arr[i] !== ' ') {
-            li.className = 'letter';
-        } else {
-            li.className = 'space';
-        }
-        phraseUl.appendChild(li);
+  for (let i = 0; i < arr.length; i++) {
+    const letter = arr[i]
+    const li = document.createElement('li');
+    const ul = document.querySelector('#phrase ul');
+    li.textContent = letter;
+    ul.appendChild(li);
+    if(letter !== ' ') {
+      li.className = 'letter'
     }
+    else {
+      li.className = 'space'
+    }
+  }
 }
 
-addPhraseToDisplay();
+addPhraseToDisplay(phraseArray);
+
+// function addPhraseToDisplay(arr) {
+//     for (let i = 0; i < arr.length; i++) {
+//         let li = document.createElement('li');
+//         li.textContent = arr[i];
+//         if (arr[i] !== ' ') {
+//             li.className = 'letter';
+//         } else {
+//             li.className = 'space';
+//         }
+//         phraseUl.appendChild(li);
+//     }
+// }
+//
+// addPhraseToDisplay();
 
 // function addPhraseToDisplay(arr) {
 //     for (let i = 0; i < arr.length; i++) {
