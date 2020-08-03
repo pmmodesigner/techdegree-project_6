@@ -50,16 +50,16 @@ const phraseLetterArray = getRandomPhraseAsArray(phrases);
 
 function addPhraseToDisplay(arr) {
   for ( let i = 0; i < arr.length; i++ ) {
-    const letter = arr[i]
+    const letter = arr[i];
     const li = document.createElement('li');
     const ul = document.querySelector('#phrase ul');
     li.textContent = letter;
     ul.appendChild(li);
     if(letter !== ' ') {
-      li.className = 'letter'
+      li.className = 'letter';
     }
     else {
-      li.className = 'space'
+      li.className = 'space';
     }
   }
 }
